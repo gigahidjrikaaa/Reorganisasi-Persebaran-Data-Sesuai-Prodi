@@ -10,7 +10,7 @@ based_by_semester_dir = "./based by semester"
 prefix_mapping = {
     "TIF": "TIF",
     "TKB": "TKB",
-    "TKE": "TKB",
+    "TKE": "TKE",
     "TKU": "TKU",
     "UNU": "UNU",
     "FIU": "FIU"
