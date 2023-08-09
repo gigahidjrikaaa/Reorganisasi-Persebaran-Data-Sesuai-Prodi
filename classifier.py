@@ -3,7 +3,8 @@ import shutil
 
 # Define the source and destination directories
 source_dir = "./persebaran"
-destination_dir = "./sorted"
+destination_dir = "./based by lecture code"
+based_by_semester_dir = "./based by semester"
 
 # Define the prefix-folder mapping
 prefix_mapping = {
@@ -22,6 +23,10 @@ for semester_folder in os.listdir(source_dir):
     # Skip if it's not a directory
     if not os.path.isdir(semester_path):
         continue
+    
+    # Create the destination directory in based_by_semester_dir if it doesn't exist
+    based_by_semester_dest = os.path.join(based_by_semester_dir, semester_folder)
+    os.makedirs(based_by_semester_dest, exist_ok=True)
     
     # Loop through each file in the semester folder
     for file_name in os.listdir(semester_path):
@@ -45,4 +50,12 @@ for semester_folder in os.listdir(source_dir):
         dest_file_path = os.path.join(dest_folder_path, file_name)
         shutil.copy(file_path, dest_file_path)
         
-print("Files copied successfully!")
+        # Further classify by semester and prefix
+        based_by_semester_prefix_dest = os.path.join(based_by_semester_dest, destination_folder)
+        os.makedirs(based_by_semester_prefix_dest, exist_ok=True)
+        
+        # Copy the file to the based by semester folder
+        based_by_semester_prefix_file_path = os.path.join(based_by_semester_prefix_dest, file_name)
+        shutil.copy(file_path, based_by_semester_prefix_file_path)
+        
+print("Files copied and classified successfully!")
