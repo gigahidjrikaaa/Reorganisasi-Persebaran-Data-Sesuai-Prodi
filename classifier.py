@@ -2,7 +2,7 @@ import os
 import shutil
 
 # Define the source and destination directories
-source_dir = "./persebaran"
+source_dir = "./persebaran" # Original source: https://drive.google.com/drive/folders/1kzwti5uVFbZ26LODDs_kwaLxd4AzzRss
 destination_dir = "./based by lecture code"
 based_by_semester_dir = "./based by semester"
 
